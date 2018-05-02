@@ -7,8 +7,9 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
+	return "Hello World!";
 
-}
+};
 
 /*
 2. Write a function called lambdaSchool that has a single parameter called num.
@@ -23,9 +24,18 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
+function lambdaSchool(num) {
+	if(num % 3 === 0 & num % 5 === 0){
+		return "Lambda School";
+	} else if (num % 5 === 0){
+		return "School";
+	} else if (num % 3 === 0) {
+		return "Lambda";
+	} else {
+		return num;
+	}
 
-}
+};
 
 /*
 3. Write a function called longestString that has a single parameter called strs.
@@ -38,9 +48,17 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(strs) {
+    var words = strs;
+    var lengths = [];
+    for(i = 0; i < words.length; i++){
+        lengths[i] = words[i].length;
+    };
+    var index = lengths.indexOf((Math.max.apply(null, lengths)));
+    return words[index];
+};
 
-}
+
 
 /*
 4. Write a function called computeUserAverageAge that has a single parameter called users
@@ -63,9 +81,14 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
 
-}
+   function computeUserAverageAge(users) {
+    var ages = [];
+    for(i = 0; i < users.length; i++) {
+        ages[i] = users[i].age;
+    };
+    return Math.round(ages.reduce(function(a,b){return a + b})/ages.length);
+};
 
 module.exports = {
  helloWorld,
