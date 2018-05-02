@@ -90,9 +90,11 @@ function longestString(strs) {
     return Math.round(ages.reduce(function(a,b){return a + b})/ages.length);
 };
 
+/*
 module.exports = {
  helloWorld,
  lambdaSchool,
  longestString,
  computeUserAverageAge
 };
+*/
